@@ -1,0 +1,130 @@
+#hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 0px;
+  background:$white-color;
+  background-image:linear-gradient(to bottom,   rgba(80, 80, 255, 0.781) 0%,
+  rgba(0, 0, 255, 0.067) 100%);
+  font-weight: 400;
+  color:$dark-blue-text;
+  padding: 0rem 5.6rem;
+  margin-bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  // position: sticky;
+
+  @include respond(phone) {
+    padding: 0rem $default-font-size;
+  }
+  
+  .partition{
+    display: flex; 
+    align-items: center; 
+    justify-content:space-between;
+    flex-wrap: wrap;
+
+    @include respond(tab-port){
+      flex-direction:column-reverse ;
+    }
+  }
+
+  .partition > div{
+    flex: 0 0 50%;
+
+    @include respond(tab-port){
+      flex: 0 0 100% ;
+    }
+  }
+
+  .partition > div:first-child{
+    @include respond(tab-port){
+      margin-top : 30px ;
+    }
+  }
+
+  .hero-title {
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+    text-align: left;
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .wave {
+      animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+      animation-duration: 2.1s; /* Change to speed up or slow down */
+      animation-iteration-count: infinite; /* Never stop waving :) */
+      transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+      display: inline-block;
+    }
+    
+    @keyframes wave-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(14deg);
+      } /* The following five values can be played with to make the waving more or less extreme */
+      20% {
+        transform: rotate(-8deg);
+      }
+      30% {
+        transform: rotate(14deg);
+      }
+      40% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      60% {
+        transform: rotate(0deg);
+      } /* Reset for the last half to pause */
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    #typewriter {
+      display: inline-block;
+      min-width: 100%;
+    }
+    #typewriter .pipe-character {
+      font-weight: normal;
+    }
+
+  .hero-cta {
+    display: flex;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    & a {
+      font-size: 2.4rem;
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
