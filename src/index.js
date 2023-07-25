@@ -42,7 +42,7 @@ const words = [
     "Engineer",
     "MERN Stack Developer",
     "Tech Enthusiast",
-    "Blogger",
+    "TT Player",
     "Gamer"
   ];
   const delay = 100;
